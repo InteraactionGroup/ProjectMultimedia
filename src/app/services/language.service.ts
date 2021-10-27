@@ -8,7 +8,7 @@ import { filter, map } from "rxjs/operators";
 })
 export class LanguageService {
 
-  public startLanguage: string = "fr";
+  public startLanguage: string = "default";
   public activeLanguage: string;
 
   /**
@@ -35,6 +35,7 @@ export class LanguageService {
    * Activate the language that has been chosen
    */
   public switchLanguage(){
+    this.activeLanguage = location.href.substring(24, 26);
     this.translate.use(this.activeLanguage);
   }
 }

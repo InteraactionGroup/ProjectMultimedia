@@ -17,6 +17,8 @@ import { SavePlaylistComponent } from './dialogComponents/savePlaylist/save-play
 import { LoadPlaylistComponent } from './dialogComponents/loadPlaylist/load-playlist.component';
 import { AlertComponent } from './dialogComponents/alert/alert.component';
 import { AccountsComponent } from './dialogComponents/accounts/accounts.component';
+import { LogoutAppComponent } from "./dialogComponents/logoutApp/logout-app.component";
+import { DialogSiteASFRComponent } from '../dialog-site-asfr/dialog-site-asfr.component';
 
 /**
  * Import Services
@@ -33,14 +35,13 @@ import { DefaultService } from '../services/default.service';
 import { UsersService } from '../services/users.service';
 import { AuthguardService } from '../services/authguard.service';
 import { AlertService } from './services/alert.service';
+import { LoginNotificationService } from "./services/login-notification.service";
+import { LanguageService } from "../services/language.service";
 
 /**
  * Import Models
  */
 import { Types } from './model/types-interface';
-import {LanguageService} from "../services/language.service";
-import {LogoutAppComponent} from "./dialogComponents/logoutApp/logout-app.component";
-import {DialogSiteASFRComponent} from '../dialog-site-asfr/dialog-site-asfr.component';
 
 /**
  * Import functions javascript
@@ -77,6 +78,12 @@ export class PlaylistComponent implements OnInit {
   textColor = "";
   index = -1;
   displayTheSideBar = false;
+
+  statusSpotify = "red";
+  textStatusSpotify = "playlist.logOutSpotify"
+
+  statusDeezer = "red";
+  textStatusDeezer = "playlist.logOutDeezer"
 
   btnType: number = 1;
   idProgressIndicatorBtnNext = "btnNextProgressSpinner";
@@ -160,6 +167,28 @@ export class PlaylistComponent implements OnInit {
         }
       },500);
     },500 );
+    this.checkStatus();
+  }
+
+  checkStatus(){
+    this.loginNotification.getStatusDeezer();
+    console.log(this.loginNotification.logOnSpotify);
+    setTimeout(() => {
+      if (this.loginNotification.logOnSpotify){
+        this.statusSpotify = "green";
+        this.textStatusSpotify = "playlist.logInSpotify"
+      }else {
+        this.statusSpotify = "red";
+        this.textStatusSpotify = "playlist.logOutSpotify"
+      }
+      if (this.loginNotification.logOnDeezer){
+        this.statusDeezer = "green";
+        this.textStatusDeezer = "playlist.logInDeezer"
+      }else {
+        this.statusDeezer = "red";
+        this.textStatusDeezer = "playlist.logOutDeezer"
+      }
+    }, 3000);
   }
 
   /**
@@ -329,6 +358,7 @@ export class PlaylistComponent implements OnInit {
       if (this.isPlaylistEmpty()){
         this.goEdit();
       }
+      this.checkStatus();
     });
   }
 

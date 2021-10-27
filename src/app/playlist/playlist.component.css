@@ -136,6 +136,14 @@ figcaption{
   color: black;
 }
 
+.noMargin{
+  margin: 0 5px 0 0 !important;
+}
+
+.circular{
+  transform: translateY(7px);
+}
+
 .titleHeader{
   display: flex;
   flex-direction: row;
@@ -153,8 +161,15 @@ figcaption{
  }
 
 /* ------------------------------ ID ------------------------------------ */
+
 #myFileAudio{
   margin-top: 50px !important;
+}
+
+#statusLogin{
+  float: right;
+  margin-top: 1%;
+  margin-right: 2%;
 }
 
 /* -------------------------- Drag&Drop --------------------------------- */

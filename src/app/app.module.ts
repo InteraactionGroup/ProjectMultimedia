@@ -58,6 +58,7 @@ import { AccountsComponent } from './playlist/dialogComponents/accounts/accounts
 import { ImportuserComponent } from './playlist/dialogComponents/importUser/importuser.component';
 import { SettingsPageComponent } from './settingsPage/settings-page.component';
 import { LogoutAppComponent } from "./playlist/dialogComponents/logoutApp/logout-app.component";
+import { SpotifyRedirectComponent } from './spotifyRedirect/spotify-redirect.component';
 import { LoadingPageComponent } from './loadingPage/loading-page.component';
 
 /**
@@ -111,6 +112,7 @@ import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.com
     ImportuserComponent,
     SettingsPageComponent,
     LogoutAppComponent,
+    SpotifyRedirectComponent
     LoadingPageComponent,
     DialogSiteASFRComponent
   ],
@@ -131,6 +133,8 @@ import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.com
       {path: ':lg/youtube', loadChildren: '../../projects/src/app/app.module#YoutubeShareModule'},
       {path: ':lg/spotify', loadChildren: '../../projects/src/app/app.module#SpotifySharedModule'},
       {path: ':lg/deezer', loadChildren: '../../projects/src/app/app.module#DeezerSharedModule'},
+      {path: '', component: SpotifyRedirectComponent},
+      {path: '**', component: SpotifyRedirectComponent},
     ], {useHash: true}),
     TranslateModule.forRoot({
       loader: {
