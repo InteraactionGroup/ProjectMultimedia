@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PlaylistComponent } from './playlist.component';
 import { NotifierModule } from 'angular-notifier';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -25,9 +24,5 @@ describe('PlaylistComponent', () => {
     fixture = TestBed.createComponent(PlaylistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

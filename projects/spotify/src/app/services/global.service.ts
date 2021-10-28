@@ -10,7 +10,6 @@ export class GlobalService {
   redirectUriHome = "http://localhost:4200/home";
   redirectUri = "http://localhost:4200/";
 
-  spotifyLogInWindow;
   accessToken = this.getToken().subscribe(data => {this.accessToken = data['access_token'];});
 
   constructor(private http: HttpClient) {
@@ -29,7 +28,6 @@ export class GlobalService {
     url += '&redirect_uri=' + encodeURIComponent(this.redirectUri);
 
     window.location.href = url;
-    //this.spotifyLogInWindow = window.open(url, "spotifyLogInWindow", " innerWidth=500, innerHeight=500" );
   }
 
   /**
