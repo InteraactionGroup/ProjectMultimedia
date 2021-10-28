@@ -173,7 +173,6 @@ export class PlaylistComponent implements OnInit {
 
   checkStatus(){
     this.loginNotification.getStatusDeezer();
-    console.log(this.loginNotification.logOnSpotify);
     setTimeout(() => {
       if (this.loginNotification.logOnSpotify){
         this.statusSpotify = "green";

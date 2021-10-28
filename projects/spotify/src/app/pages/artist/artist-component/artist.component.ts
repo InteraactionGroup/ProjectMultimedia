@@ -75,6 +75,6 @@ export class ArtistComponent implements OnInit {
   }
 
   goBack(){
-    this.location.back();
+    history.back();
   }
 }
