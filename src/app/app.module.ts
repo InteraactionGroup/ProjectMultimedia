@@ -127,7 +127,7 @@ import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.com
     DeezerSharedModule.forRoot(),
     RouterModule.forRoot([
       /*{path: ':lg/user', component: UserComponent},*/
-      {path: ':lg/home/:id', component: LoadingPageComponent},
+      {path: ':lg/connect/:id', component: LoadingPageComponent},
       {path: ':lg/playlist', component: PlaylistComponent},
       {path: ':lg/settings', component: SettingsPageComponent},
       {path: ':lg/youtube', loadChildren: '../../projects/src/app/app.module#YoutubeShareModule'},
