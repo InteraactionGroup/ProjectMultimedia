@@ -85,6 +85,7 @@ import { MapPipe } from './playlist/pipe/map.pipe';
 import { PipesModule } from '../../projects/spotify/src/app/pipes/pipes.module';
 import { PipeModule } from '../../projects/deezer/src/app/pipe/pipe.module';
 import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.component';
+import { DialogLinkInteraactionboxComponent } from './playlist/dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
 
 @NgModule({
   declarations: [
@@ -114,7 +115,8 @@ import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.com
     LogoutAppComponent,
     SpotifyRedirectComponent,
     LoadingPageComponent,
-    DialogSiteASFRComponent
+    DialogSiteASFRComponent,
+    DialogLinkInteraactionboxComponent
   ],
   imports: [
     BrowserModule,
