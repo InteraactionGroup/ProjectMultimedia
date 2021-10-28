@@ -42,6 +42,7 @@ import { LanguageService } from "../services/language.service";
  * Import Models
  */
 import { Types } from './model/types-interface';
+import {DialogLinkInteraactionboxComponent} from './dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
 
 /**
  * Import functions javascript
@@ -900,6 +901,13 @@ export class PlaylistComponent implements OnInit {
 
   openDialogSiteASFR() {
     this.dialog.open(DialogSiteASFRComponent,{
+      height: '90%',
+      width: '90%'
+    });
+  }
+
+  openDialogSiteInteraactionBox() {
+    this.dialog.open(DialogLinkInteraactionboxComponent,{
       height: '90%',
       width: '90%'
     });
