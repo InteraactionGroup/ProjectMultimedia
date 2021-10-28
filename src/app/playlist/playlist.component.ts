@@ -899,6 +899,13 @@ export class PlaylistComponent implements OnInit {
     return (this.theme =='') ? '#81197f' : 'white';
   }
 
+  openDialogSiteASFR() {
+    this.dialog.open(DialogSiteASFRComponent,{
+      height: '90%',
+      width: '90%'
+    });
+  }
+
   openDialogSiteInteraactionBox() {
     this.dialog.open(DialogLinkInteraactionboxComponent,{
       height: '90%',
