@@ -112,7 +112,7 @@ import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.com
     ImportuserComponent,
     SettingsPageComponent,
     LogoutAppComponent,
-    SpotifyRedirectComponent
+    SpotifyRedirectComponent,
     LoadingPageComponent,
     DialogSiteASFRComponent
   ],

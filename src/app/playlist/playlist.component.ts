@@ -132,7 +132,8 @@ export class PlaylistComponent implements OnInit {
               private usersService: UsersService,
               private authGuardService: AuthguardService,
               private alertService: AlertService,
-              private languageService: LanguageService) {
+              private languageService: LanguageService,
+              private loginNotification: LoginNotificationService) {
     this.saveService.getUser();
   }
 
