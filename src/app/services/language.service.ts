@@ -23,7 +23,6 @@ export class LanguageService {
         filter(e => (e instanceof ActivationEnd) && (Object.keys(e.snapshot.params).length > 0)),
         map(e => e instanceof ActivationEnd ? e.snapshot.params : {})
       ).subscribe(params => {
-        console.log(Object.values(params)[0]);
         this.activeLanguage = Object.values(params)[0];
       });
       setTimeout(() => {
