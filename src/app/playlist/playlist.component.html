@@ -56,7 +56,7 @@
            (mouseleave)="hideProgressIndicator('editIcon', idProgressIndicatorIconEdit); hideBtn('editIcon')"
            matTooltip="{{'playlist.editBtn' | translate}}"
            matTooltipPosition="before">
-          <i class="big edit icon"></i>
+          <i class="big pencil alternate icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconEdit" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
       </div>
@@ -98,7 +98,7 @@
            (mouseleave)="hideProgressIndicator('settingsIcon', idProgressIndicatorIconSettings); hideBtn('settingsIcon')"
            matTooltip="{{'playlist.settingsBtn' | translate}}"
            matTooltipPosition="before">
-          <i class="big cogs icon"></i>
+          <i class="big cog icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconSettings" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
         <a id="userIcon" class="item" (click)="openAccounts()"
@@ -114,7 +114,7 @@
            (mouseleave)="hideProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); hideBtn('logoutIcon')"
            matTooltip="{{'playlist.logoutBtn' | translate}}"
            matTooltipPosition="before">
-          <i class="big sign out icon"></i>
+          <i class="big open door icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconLogout" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
       </div>
