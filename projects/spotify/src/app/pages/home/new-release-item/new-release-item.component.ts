@@ -11,6 +11,7 @@ import { NewReleasesItem } from '../models/new-releases-model';
  */
 import {ThemeService} from '../../../../../../../src/app/services/theme.service';
 import {LanguageService} from "../../../../../../../src/app/services/language.service";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-new-release-item',
@@ -27,7 +28,10 @@ export class NewReleaseItemComponent implements OnInit {
   newReleaseArtistName;
   newReleaseType;
 
-  constructor(private router: Router, private themeService : ThemeService, private languageService: LanguageService) {
+  constructor(private router: Router,
+              private themeService : ThemeService,
+              private languageService: LanguageService,
+              private statusInternet: StatusInternetService) {
     this.theme = themeService.theme;
   }
 
@@ -88,8 +92,13 @@ export class NewReleaseItemComponent implements OnInit {
    * When the user click on a new release music, navigate to this album web page
    */
   public navigate(newRelease: any): void {
+    this.checkConnexion();
     let newReleaseId: number = 0;
     newRelease.type === 'artist' ?  newReleaseId = newRelease.id : newReleaseId = newRelease.id;
     this.router.navigate([this.languageService.activeLanguage + '/spotify/album', newReleaseId]);
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 }

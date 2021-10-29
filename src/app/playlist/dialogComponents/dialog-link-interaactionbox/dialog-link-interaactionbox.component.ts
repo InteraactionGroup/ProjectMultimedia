@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {StatusInternetService} from "../../../services/status-internet.service";
 
 @Component({
   selector: 'app-dialog-link-interaactionbox',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogLinkInteraactionboxComponent implements OnInit {
 
-  constructor() { }
+  constructor(private statusInternet: StatusInternetService) {
+  }
 
   ngOnInit(): void {
+    this.statusInternet.checkStatusInternet();
   }
 
 }

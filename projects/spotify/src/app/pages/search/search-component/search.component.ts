@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { SearchService } from '../services/search.service';
 import { ThemeService } from '../../../../../../../src/app/services/theme.service';
 import {LanguageService} from "../../../../../../../src/app/services/language.service";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-search',
@@ -27,7 +28,8 @@ export class SearchComponent implements OnInit {
   constructor( private searchService: SearchService,
                private router: Router,
                private themeService: ThemeService,
-               private languageService: LanguageService) {
+               private languageService: LanguageService,
+               private statusInternet: StatusInternetService) {
     this.theme = themeService.theme;
     this.themeSearch = themeService.theme + " transparent contourColor";
   }
@@ -38,12 +40,17 @@ export class SearchComponent implements OnInit {
     this.showModal = false;
   }
 
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
+  }
+
   /**
    * @param term
    *
    * Serach both artist and tracks
    */
   public search(term: string): void {
+    this.checkConnexion();
     this.onSearch = true;
     this.router.navigate([this.languageService.activeLanguage + '/spotify/search', term]);
     this.searchService.getTracksAndArtists(term).subscribe((data: any) => {

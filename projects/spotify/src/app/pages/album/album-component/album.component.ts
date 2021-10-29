@@ -16,6 +16,7 @@ import { NotifierService } from 'angular-notifier';
  * Import Models
  */
 import { APIAlbums, Image, Item } from '../models/album-model';
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-album',
@@ -42,7 +43,8 @@ export class AlbumComponent implements OnInit {
     private playlistService: PlaylistService,
     private saveService: SaveService,
     private themeService: ThemeService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private statusInternet: StatusInternetService
   ) {
     this.theme = themeService.theme;
   }
@@ -227,7 +229,12 @@ export class AlbumComponent implements OnInit {
    * Go back to the previous URL
    */
   public goBack(): void {
+    this.checkConnexion();
     this.location.back();
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 
 }

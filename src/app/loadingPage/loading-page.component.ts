@@ -5,6 +5,7 @@ import { UsersService } from "../services/users.service";
 import { SaveService } from "../services/save.service";
 import { Users } from "../models/users-interface";
 import { DefaultService } from "../services/default.service";
+import { StatusInternetService } from "../services/status-internet.service";
 
 @Component({
   selector: 'app-loading-page',
@@ -20,7 +21,8 @@ export class LoadingPageComponent implements OnInit {
               private router: Router,
               private userService: UsersService,
               private saveService: SaveService,
-              private defaultService: DefaultService) {
+              private defaultService: DefaultService,
+              private statusInternet: StatusInternetService) {
   }
 
   ngOnInit(): void {
@@ -62,6 +64,10 @@ export class LoadingPageComponent implements OnInit {
   }
 
   endLoading(){
-    this.router.navigate([this.languageService.activeLanguage + '/playlist']);
+    if (this.statusInternet.getStatusInternet()){
+      this.router.navigate([this.languageService.activeLanguage + '/playlist']);
+    }else {
+      this.statusInternet.checkStatusInternet();
+    }
   }
 }

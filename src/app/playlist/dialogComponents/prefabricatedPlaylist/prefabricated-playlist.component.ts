@@ -9,6 +9,7 @@ import { PlaylistService } from '../../services/playlist.service';
 import { NotifierService } from 'angular-notifier';
 import { SaveService } from '../../../services/save.service';
 import { TranslateService } from '@ngx-translate/core';
+import {StatusInternetService} from "../../../services/status-internet.service";
 
 @Component({
   selector: 'app-prefabricated-playlist',
@@ -24,7 +25,8 @@ export class PrefabricatedPlaylistComponent implements OnInit {
               private dialog: MatDialog,
               private notifier: NotifierService,
               private saveService: SaveService,
-              private translate: TranslateService) {
+              private translate: TranslateService,
+              private statusInternet: StatusInternetService) {
   }
 
   ngOnInit(): void {
@@ -75,9 +77,14 @@ export class PrefabricatedPlaylistComponent implements OnInit {
    * And save the new Playlist in the database
    */
   submit(){
+    this.checkInternet();
     this.goLoad(this.namePrefabricatedPlaylist);
     this.dialog.closeAll();
     this.notifier.notify('warning', this.translate.instant('notifier.prefabricatedPlaylist'));
     this.saveService.updatePlaylist();
+  }
+
+  checkInternet(){
+    this.statusInternet.checkStatusInternet();
   }
 }

@@ -19,6 +19,7 @@ import { AlertComponent } from './dialogComponents/alert/alert.component';
 import { AccountsComponent } from './dialogComponents/accounts/accounts.component';
 import { LogoutAppComponent } from "./dialogComponents/logoutApp/logout-app.component";
 import { DialogSiteASFRComponent } from '../dialog-site-asfr/dialog-site-asfr.component';
+import { DialogLinkInteraactionboxComponent } from './dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
 
 /**
  * Import Services
@@ -37,12 +38,12 @@ import { AuthguardService } from '../services/authguard.service';
 import { AlertService } from './services/alert.service';
 import { LoginNotificationService } from "./services/login-notification.service";
 import { LanguageService } from "../services/language.service";
+import { StatusInternetService } from "../services/status-internet.service";
 
 /**
  * Import Models
  */
 import { Types } from './model/types-interface';
-import {DialogLinkInteraactionboxComponent} from './dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
 
 /**
  * Import functions javascript
@@ -134,8 +135,10 @@ export class PlaylistComponent implements OnInit {
               private authGuardService: AuthguardService,
               private alertService: AlertService,
               private languageService: LanguageService,
-              private loginNotification: LoginNotificationService) {
+              private loginNotification: LoginNotificationService,
+              private statusInternet: StatusInternetService) {
     this.saveService.getUser();
+    this.statusInternet.checkStatusInternet();
   }
 
   /**
@@ -157,7 +160,7 @@ export class PlaylistComponent implements OnInit {
         this.textColor = "lightMode";
       }
     });
-    new DialogChooseTypeComponent(this.router, this.dialog, this.playlistService, this.languageService);
+    new DialogChooseTypeComponent(this.router, this.dialog, this.playlistService, this.languageService, this.statusInternet);
     setTimeout(() => {
       this.saveService.initPlaylist();
       setTimeout(() => {
@@ -452,8 +455,10 @@ export class PlaylistComponent implements OnInit {
    * Allows the user to logout and return on the user page
    */
   logout(){
-    logoutDeezer();
-    this.globalService.getLogoutAccountSpotify();
+    if (this.statusInternet.getStatusInternet()){
+      logoutDeezer();
+      this.globalService.getLogoutAccountSpotify();
+    }
     this.dialog.open(LogoutAppComponent);
   }
 
@@ -465,6 +470,7 @@ export class PlaylistComponent implements OnInit {
    * And if it's a Youtube video or a Spotify music, set the volume default
    */
   goLaunch(elem: Types) {
+    this.statusInternet.checkStatusInternet();
     if (elem.types != "btnAdd"){
       this.currentElem = elem;
       this.launch = true;
@@ -622,6 +628,7 @@ export class PlaylistComponent implements OnInit {
    * Then go on this element and set default volume
    */
   goNext() {
+    this.statusInternet.checkStatusInternet();
     this.exitFullScreen();
     this.isEditModeActive();
     if (this.playList.length > 1){
@@ -649,6 +656,7 @@ export class PlaylistComponent implements OnInit {
    * Then go on this element and set default volume
    */
   goPrevious() {
+    this.statusInternet.checkStatusInternet();
     this.exitFullScreen();
     this.isEditModeActive();
     if (this.playList.length > 1){
@@ -694,6 +702,7 @@ export class PlaylistComponent implements OnInit {
    * Allows the user to launch the current element selected
    */
   goPlay(){
+    this.statusInternet.checkStatusInternet();
     if (this.currentElem.types == 'video'){
       this.myvideo.nativeElement.play();
     }else if (this.currentElem.types == 'song' && !this.audioService.audioPlay){
@@ -711,6 +720,7 @@ export class PlaylistComponent implements OnInit {
    * Allows the user to pause the current element selected
    */
   goPause(){
+    this.statusInternet.checkStatusInternet();
     if (this.currentElem.types == 'video'){
       this.myvideo.nativeElement.pause();
     }else if (this.currentElem.types == 'song' && this.audioService.audioPlay){
@@ -728,6 +738,7 @@ export class PlaylistComponent implements OnInit {
    * Allow the user to decrease the volume of the current video/music
    */
   goDecreaseVolume(){
+    this.statusInternet.checkStatusInternet();
     let newVolume = 0;
     if (this.currentElem.types == "video" && this.myvideo.nativeElement.volume > 0){
       newVolume = this.myvideo.nativeElement.volume - 0.1;
@@ -757,6 +768,7 @@ export class PlaylistComponent implements OnInit {
    * Allow the user to increase the volume of the current video/music
    */
   goIncreaseVolume(){
+    this.statusInternet.checkStatusInternet();
     let newVolume = 0;
     if (this.currentElem.types == "video" && this.myvideo.nativeElement.volume < 1){
       newVolume = this.myvideo.nativeElement.volume + 0.1;
