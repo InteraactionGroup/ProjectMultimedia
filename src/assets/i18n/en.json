@@ -164,9 +164,9 @@
     "positiveTitle": "Internet connection successful !",
     "errorMessage": "It seems that you are no longer connected to internet !",
     "positiveMessage": "You are well connected to internet !",
-    "exitApp": "Exit",
-    "checkConnexion": "Check",
-    "goPlaylist": "Go"
+    "exitApp": "Exit interAACtion Player",
+    "checkConnexion": "Check internet connexion",
+    "goPlaylist": "Go to playlist"
   },
   "prefabricatedPlaylist": {
     "title": "Prefabricated Playlist",

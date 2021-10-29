@@ -161,12 +161,12 @@
   },
   "error": {
     "errorTitle": "Erreur connexion internet !",
-    "positiveTitle": "Connexion internet réussi !",
-    "errorMessage": "Il semblerait que vous ne soyez plus connecter à internet !",
-    "positiveMessage": "Vous êtes bien connecter à internet !",
-    "exitApp": "Quitter",
-    "checkConnexion": "Check",
-    "goPlaylist": "Go"
+    "positiveTitle": "Connexion internet réussie !",
+    "errorMessage": "Il semblerait que vous ne soyez plus connecté à internet !",
+    "positiveMessage": "Vous êtes bien connecté à internet !",
+    "exitApp": "Quitter interAACtion Player",
+    "checkConnexion": "Tester sa connexion",
+    "goPlaylist": "Retourner à sa playlist"
   },
   "prefabricatedPlaylist": {
     "title": "Playlist pré-enregistré",

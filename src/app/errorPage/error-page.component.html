@@ -1,15 +1,17 @@
-<div *ngIf="disableBtn" class="ui negative message">
-  <div class="header">
+<div *ngIf="disableBtn" class="ui negative message errorContainer">
+  <div class="ui centered aligned header">
     {{ "error.errorTitle" | translate }}
   </div>
-  <p>{{ "error.errorMessage" | translate }}</p>
+  <p class="textAlign">{{ "error.errorMessage" | translate }}</p>
 </div>
-<div *ngIf="!disableBtn" class="ui positive message">
-  <div class="header">
+<div *ngIf="!disableBtn" class="ui positive message errorContainer">
+  <div class="ui centered aligned header">
     {{ "error.positiveTitle" | translate }}
   </div>
-  <p>{{ "error.positiveMessage" | translate }}</p>
+  <p class="textAlign">{{ "error.positiveMessage" | translate }}</p>
 </div>
-<button (click)="exitApp()">{{ "error.exitApp" | translate }}</button>
-<button (click)="checkInternetConnexion()">{{ "error.checkConnexion" | translate }}</button>
-<button (click)="goPlaylist()" [disabled]="disableBtn">{{ "error.goPlaylist" | translate }}</button>
+<div class="textAlign">
+  <button class="ui button" (click)="exitApp()">{{ "error.exitApp" | translate }}</button>
+  <button class="ui button" (click)="checkInternetConnexion()">{{ "error.checkConnexion" | translate }}</button>
+  <button class="ui button" (click)="goPlaylist()" [disabled]="disableBtn">{{ "error.goPlaylist" | translate }}</button>
+</div>
