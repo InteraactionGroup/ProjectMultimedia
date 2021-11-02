@@ -17,7 +17,7 @@
   </div>
 </div>
 <div mat-dialog-actions>
-  <button class="ui button" (click)="goCancel()">{{ "savePlaylist.no" | translate }}</button>
   <button [ngClass]="disabledButton" class="ui button" (click)="submit()">{{ "savePlaylist.yes" | translate }}</button>
+  <button class="ui button" (click)="goCancel()">{{ "savePlaylist.no" | translate }}</button>
 </div>
 <notifier-container></notifier-container>
