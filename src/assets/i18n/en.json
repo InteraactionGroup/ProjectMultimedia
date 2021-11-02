@@ -166,7 +166,8 @@
     "positiveMessage": "You are well connected to internet !",
     "exitApp": "Exit interAACtion Player",
     "checkConnexion": "Check internet connexion",
-    "goPlaylist": "Go to playlist"
+    "goPlaylist": "Go to playlist",
+    "goOfflinePlaylist": "Go to playlist in offline"
   },
   "prefabricatedPlaylist": {
     "title": "Prefabricated Playlist",

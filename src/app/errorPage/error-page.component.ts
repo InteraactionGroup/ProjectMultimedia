@@ -11,7 +11,8 @@ import { LanguageService } from "../services/language.service";
 })
 export class ErrorPageComponent implements OnInit {
 
-  disableBtn = true;
+  noInternet = true;
+  playlistButton = "error.goPlaylist";
 
   constructor(private dialog: MatDialog,
               private router: Router,
@@ -23,9 +24,11 @@ export class ErrorPageComponent implements OnInit {
 
   checkInternetConnexion(){
     if (navigator.onLine){
-      this.disableBtn = false;
+      this.noInternet = false;
+      this.playlistButton = "error.goOfflinePlaylist";
       return true;
     }else {
+      this.playlistButton = "error.goPlaylist";
       return false;
     }
   }

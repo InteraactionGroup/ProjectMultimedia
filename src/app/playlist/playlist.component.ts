@@ -138,7 +138,6 @@ export class PlaylistComponent implements OnInit {
               private loginNotification: LoginNotificationService,
               private statusInternet: StatusInternetService) {
     this.saveService.getUser();
-    this.statusInternet.checkStatusInternet();
   }
 
   /**
@@ -470,9 +469,9 @@ export class PlaylistComponent implements OnInit {
    * And if it's a Youtube video or a Spotify music, set the volume default
    */
   goLaunch(elem: Types) {
-    this.statusInternet.checkStatusInternet();
     if (elem.types != "btnAdd"){
       this.currentElem = elem;
+      this.checkTypeElement();
       this.launch = true;
       this.refreshAudioPlayer();
       this.goOnElement("watchPlace");
@@ -480,6 +479,12 @@ export class PlaylistComponent implements OnInit {
       setTimeout(() =>{
         this.displaySideBar();
       }, 300);
+    }
+  }
+
+  checkTypeElement(){
+    if (this.currentElem.types != "song" || this.currentElem.types != "video"){
+      this.statusInternet.checkStatusInternet();
     }
   }
 
@@ -628,7 +633,7 @@ export class PlaylistComponent implements OnInit {
    * Then go on this element and set default volume
    */
   goNext() {
-    this.statusInternet.checkStatusInternet();
+    this.checkTypeElement();
     this.exitFullScreen();
     this.isEditModeActive();
     if (this.playList.length > 1){
@@ -656,7 +661,7 @@ export class PlaylistComponent implements OnInit {
    * Then go on this element and set default volume
    */
   goPrevious() {
-    this.statusInternet.checkStatusInternet();
+    this.checkTypeElement();
     this.exitFullScreen();
     this.isEditModeActive();
     if (this.playList.length > 1){
@@ -702,7 +707,7 @@ export class PlaylistComponent implements OnInit {
    * Allows the user to launch the current element selected
    */
   goPlay(){
-    this.statusInternet.checkStatusInternet();
+    this.checkTypeElement();
     if (this.currentElem.types == 'video'){
       this.myvideo.nativeElement.play();
     }else if (this.currentElem.types == 'song' && !this.audioService.audioPlay){
@@ -720,7 +725,7 @@ export class PlaylistComponent implements OnInit {
    * Allows the user to pause the current element selected
    */
   goPause(){
-    this.statusInternet.checkStatusInternet();
+    this.checkTypeElement();
     if (this.currentElem.types == 'video'){
       this.myvideo.nativeElement.pause();
     }else if (this.currentElem.types == 'song' && this.audioService.audioPlay){
@@ -738,7 +743,7 @@ export class PlaylistComponent implements OnInit {
    * Allow the user to decrease the volume of the current video/music
    */
   goDecreaseVolume(){
-    this.statusInternet.checkStatusInternet();
+    this.checkTypeElement();
     let newVolume = 0;
     if (this.currentElem.types == "video" && this.myvideo.nativeElement.volume > 0){
       newVolume = this.myvideo.nativeElement.volume - 0.1;
@@ -768,7 +773,7 @@ export class PlaylistComponent implements OnInit {
    * Allow the user to increase the volume of the current video/music
    */
   goIncreaseVolume(){
-    this.statusInternet.checkStatusInternet();
+    this.checkTypeElement();
     let newVolume = 0;
     if (this.currentElem.types == "video" && this.myvideo.nativeElement.volume < 1){
       newVolume = this.myvideo.nativeElement.volume + 0.1;

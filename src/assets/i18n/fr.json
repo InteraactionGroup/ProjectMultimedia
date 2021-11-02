@@ -166,7 +166,8 @@
     "positiveMessage": "Vous êtes bien connecté à internet !",
     "exitApp": "Quitter interAACtion Player",
     "checkConnexion": "Tester sa connexion",
-    "goPlaylist": "Retourner à sa playlist"
+    "goPlaylist": "Retourner à sa playlist",
+    "goOfflinePlaylist": "Retourner à sa playlist en hors ligne"
   },
   "prefabricatedPlaylist": {
     "title": "Playlist pré-enregistré",
