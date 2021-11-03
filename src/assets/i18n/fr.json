@@ -159,6 +159,16 @@
     "import": "Importer fichier",
     "acceptedFile": "Fichier bien reçu"
   },
+  "error": {
+    "errorTitle": "Erreur connexion internet !",
+    "positiveTitle": "Connexion internet réussie !",
+    "errorMessage": "Il semblerait que vous ne soyez plus connecté à internet !",
+    "positiveMessage": "Vous êtes bien connecté à internet !",
+    "exitApp": "Quitter interAACtion Player",
+    "checkConnexion": "Tester sa connexion",
+    "goPlaylist": "Retourner à sa playlist",
+    "goOfflinePlaylist": "Retourner à sa playlist en hors ligne"
+  },
   "prefabricatedPlaylist": {
     "title": "Playlist pré-enregistré",
     "choice": "Liste de Playlist pré-enregistré",

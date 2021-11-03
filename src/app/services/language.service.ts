@@ -37,4 +37,8 @@ export class LanguageService {
     this.activeLanguage = location.href.substring(24, 26);
     this.translate.use(this.activeLanguage);
   }
+
+  public getLanguage(){
+    return location.href.substring(24, 26);
+  }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemeService } from '../../../../../../../src/app/services/theme.service';
 import { LanguageService } from "../../../../../../../src/app/services/language.service";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-artist-albums',
@@ -15,7 +16,8 @@ export class ArtistAlbumsComponent implements OnInit {
 
   constructor(private router: Router,
               private themeService: ThemeService,
-              private languageService: LanguageService) {
+              private languageService: LanguageService,
+              private statusInternet: StatusInternetService) {
     this.theme = themeService.theme;
   }
 
@@ -28,6 +30,11 @@ export class ArtistAlbumsComponent implements OnInit {
    * When clicked on the album, send the user on the a web page that contains all music in this album
    */
   public seeAlbum(album: any): void {
+    this.checkConnexion();
     this.router.navigate([this.languageService.activeLanguage + '/spotify/album', album.id]);
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 }

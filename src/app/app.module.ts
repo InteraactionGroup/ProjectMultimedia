@@ -60,6 +60,9 @@ import { SettingsPageComponent } from './settingsPage/settings-page.component';
 import { LogoutAppComponent } from "./playlist/dialogComponents/logoutApp/logout-app.component";
 import { SpotifyRedirectComponent } from './spotifyRedirect/spotify-redirect.component';
 import { LoadingPageComponent } from './loadingPage/loading-page.component';
+import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.component';
+import { DialogLinkInteraactionboxComponent } from './playlist/dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
+import { ErrorPageComponent } from './errorPage/error-page.component';
 
 /**
  * Import module Sub-Application
@@ -84,8 +87,6 @@ export function createTranslateLoader(http: HttpClient) {
 import { MapPipe } from './playlist/pipe/map.pipe';
 import { PipesModule } from '../../projects/spotify/src/app/pipes/pipes.module';
 import { PipeModule } from '../../projects/deezer/src/app/pipe/pipe.module';
-import { DialogSiteASFRComponent } from './dialog-site-asfr/dialog-site-asfr.component';
-import { DialogLinkInteraactionboxComponent } from './playlist/dialogComponents/dialog-link-interaactionbox/dialog-link-interaactionbox.component';
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { DialogLinkInteraactionboxComponent } from './playlist/dialogComponents/
     SpotifyRedirectComponent,
     LoadingPageComponent,
     DialogSiteASFRComponent,
-    DialogLinkInteraactionboxComponent
+    DialogLinkInteraactionboxComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -132,6 +134,7 @@ import { DialogLinkInteraactionboxComponent } from './playlist/dialogComponents/
       {path: ':lg/connect/:id', component: LoadingPageComponent},
       {path: ':lg/playlist', component: PlaylistComponent},
       {path: ':lg/settings', component: SettingsPageComponent},
+      {path: ':lg/error', component: ErrorPageComponent},
       {path: ':lg/youtube', loadChildren: '../../projects/src/app/app.module#YoutubeShareModule'},
       {path: ':lg/spotify', loadChildren: '../../projects/src/app/app.module#SpotifySharedModule'},
       {path: ':lg/deezer', loadChildren: '../../projects/src/app/app.module#DeezerSharedModule'},

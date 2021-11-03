@@ -12,6 +12,7 @@ import { GlobalService } from '../../../services/global.service';
  */
 import { IResult } from '../../../models/iresult';
 import {LanguageService} from "../../../../../../../src/app/services/language.service";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-search',
@@ -33,6 +34,7 @@ export class SearchComponent implements OnInit {
    * @param themeService
    * @param globalService
    * @param languageService
+   * @param statusInternet
    *
    * Initialize the router for navigate between page
    * And allows to initialize the page with the right theme
@@ -40,7 +42,8 @@ export class SearchComponent implements OnInit {
   constructor(router: Router,
               themeService: ThemeService,
               globalService: GlobalService,
-              private languageService: LanguageService) {
+              private languageService: LanguageService,
+              private statusInternet: StatusInternetService) {
     this.router = router;
     this.themeService = themeService;
     this.theme = this.themeService.theme;
@@ -57,6 +60,7 @@ export class SearchComponent implements OnInit {
    * Get music on Deezer who are equal with the user submit in the search bar
    */
   searchMusic() {
+    this.checkConnexion();
     this.globalService.searchMusic(this.searchInput).subscribe(results => {
       this.searchRes = results;
     });
@@ -75,7 +79,12 @@ export class SearchComponent implements OnInit {
    * When the user click on a artist, navigate to this album web page
    */
   public navigate(artistId): void {
+    this.checkConnexion();
     this.globalService.idArtistChoose = artistId;
     this.router.navigate([this.languageService.activeLanguage + '/deezer/artists', artistId]);
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 }

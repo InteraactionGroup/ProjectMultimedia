@@ -10,6 +10,7 @@ import { SaveService } from '../../../../../../../src/app/services/save.service'
 import { ThemeService } from '../../../../../../../src/app/services/theme.service';
 import { TranslateService } from '@ngx-translate/core';
 import { GlobalService } from '../../../services/global.service';
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-albums',
@@ -33,7 +34,8 @@ export class AlbumsComponent implements OnInit {
     private saveService: SaveService,
     private themeService: ThemeService,
     private translate: TranslateService,
-    private globalService: GlobalService
+    private globalService: GlobalService,
+    private statusInternet: StatusInternetService
   ) {
     this.theme = themeService.theme;
   }
@@ -152,6 +154,11 @@ export class AlbumsComponent implements OnInit {
    * Go back to the previous URL
    */
   public goBack(): void {
+    this.checkConnexion();
     this.location.back();
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 }

@@ -17,13 +17,13 @@ export class AuthguardService{
    * Check if the user is logged, else we return the user on the user page
    */
   canAccess(){
-    this.saveService.getUser();
+    /*this.saveService.getUser();
     setTimeout(() => {
       if (this.usersService.idUser != "" && this.usersService.typeUser != ""){
         this.saveService.initPlaylist();
       } else {
         this.router.navigate(['user']);
       }
-    },300);
+    },300);*/
   }
 }

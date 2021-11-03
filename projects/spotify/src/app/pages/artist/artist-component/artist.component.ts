@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ArtistService } from '../services/artist.service';
 import { ThemeService } from '../../../../../../../src/app/services/theme.service';
 import {Location} from "@angular/common";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-artist',
@@ -24,7 +25,11 @@ export class ArtistComponent implements OnInit {
   artistName;
   artistFollower;
 
-  constructor( private activatedRoute: ActivatedRoute, private artistService: ArtistService, private themeService: ThemeService, private location: Location, ) {
+  constructor( private activatedRoute: ActivatedRoute,
+               private artistService: ArtistService,
+               private themeService: ThemeService,
+               private location: Location,
+               private statusInternet: StatusInternetService) {
     this.theme = themeService.theme;
   }
 
@@ -75,6 +80,11 @@ export class ArtistComponent implements OnInit {
   }
 
   goBack(){
+    this.checkConnexion();
     history.back();
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 }

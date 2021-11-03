@@ -4,6 +4,7 @@ import { debounceTime, pluck, distinctUntilChanged, filter, map } from 'rxjs/ope
 import { Router } from '@angular/router';
 import { ThemeService } from '../../../../../../../src/app/services/theme.service';
 import {LanguageService} from "../../../../../../../src/app/services/language.service";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-search-input',
@@ -24,11 +25,12 @@ export class SearchInputComponent implements OnInit,AfterViewInit {
    * @param router
    * @param themeService
    * @param languageService
+   * @param statusInternet
    *
    * Initialize the router for navigate between page
    * And allows to initialize the page with the right theme
    */
-  constructor(router: Router, themeService: ThemeService, private languageService: LanguageService) {
+  constructor(router: Router, themeService: ThemeService, private languageService: LanguageService, private statusInternet: StatusInternetService) {
     this.router = router;
     this.themeService = themeService;
     this.theme = this.themeService.theme;
@@ -62,6 +64,7 @@ export class SearchInputComponent implements OnInit,AfterViewInit {
    * This allow us to subscribe to it, in which case the value can be sent over to the parent component using the 'Output' event emitter.
    */
   ngAfterViewInit() {
+    this.statusInternet.checkStatusInternet();
     fromEvent(this.inputElement.nativeElement, 'keyup')
       .pipe(
         debounceTime(500),

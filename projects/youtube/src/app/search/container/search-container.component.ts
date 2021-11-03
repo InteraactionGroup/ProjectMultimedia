@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SearchService} from '../../shared/services/search.service';
 import { Video} from '../../shared/models/search.interface';
+import {StatusInternetService} from "../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-search-container',
@@ -15,7 +16,7 @@ export class SearchContainerComponent implements OnInit{
   moreVideo = false;
   videos: Video[] = [];
 
-  constructor(private searchService: SearchService) {
+  constructor(private searchService: SearchService, private statusInternet: StatusInternetService) {
   }
 
   /**
@@ -69,6 +70,7 @@ export class SearchContainerComponent implements OnInit{
    * Allows to the user to display more videos
    */
   increaseVideoDisplay(){
+    this.statusInternet.checkStatusInternet();
     this.searchService.emitIncreaseNbDisplayValue();
   }
 }

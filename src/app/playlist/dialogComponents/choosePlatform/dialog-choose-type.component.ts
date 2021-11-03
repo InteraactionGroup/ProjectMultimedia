@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PlaylistService } from '../../services/playlist.service';
 import { PrefabricatedPlaylistComponent } from '../prefabricatedPlaylist/prefabricated-playlist.component';
 import {LanguageService} from "../../../services/language.service";
+import {StatusInternetService} from "../../../services/status-internet.service";
 
 @Component({
   selector: 'app-dialog-choose-type',
@@ -12,14 +13,11 @@ import {LanguageService} from "../../../services/language.service";
 })
 export class DialogChooseTypeComponent implements OnInit {
 
-  private router: Router;
-  private dialog: MatDialog;
-  private playlistService: PlaylistService;
-
-  constructor(router: Router, dialog: MatDialog, playlistService: PlaylistService, private languageService: LanguageService) {
-    this.router = router;
-    this.dialog = dialog;
-    this.playlistService = playlistService;
+  constructor(private router: Router,
+              private dialog: MatDialog,
+              private playlistService: PlaylistService,
+              private languageService: LanguageService,
+              private statusInternet: StatusInternetService) {
   }
 
   ngOnInit(): void {
@@ -29,6 +27,7 @@ export class DialogChooseTypeComponent implements OnInit {
    * Close all DialogComponents then on the web page Youtube
    */
   goYoutube(): void {
+    this.checkInternet()
     this.playlistService.addBtnAddInEmptyPlaylist = false;
     this.dialog.closeAll();
     this.router.navigate([this.languageService.activeLanguage + '/youtube']);
@@ -38,6 +37,7 @@ export class DialogChooseTypeComponent implements OnInit {
    * Close all DialogComponents then on the web page Spotify
    */
   goSpotify() {
+    this.checkInternet()
     this.playlistService.addBtnAddInEmptyPlaylist = false;
     this.dialog.closeAll();
     this.router.navigate([this.languageService.activeLanguage + '/spotify']);
@@ -47,6 +47,7 @@ export class DialogChooseTypeComponent implements OnInit {
    * Close all DialogComponents then on the web page Deezer
    */
   goDeezer(){
+    this.checkInternet()
     this.playlistService.addBtnAddInEmptyPlaylist = false;
     this.dialog.closeAll();
     this.router.navigate([this.languageService.activeLanguage + '/deezer']);
@@ -57,5 +58,9 @@ export class DialogChooseTypeComponent implements OnInit {
    */
   goPrefabricatedPlaylist(){
     this.dialog.open(PrefabricatedPlaylistComponent);
+  }
+
+  checkInternet(){
+    this.statusInternet.checkStatusInternet();
   }
 }

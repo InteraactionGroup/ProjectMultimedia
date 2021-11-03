@@ -4,6 +4,7 @@ import { GlobalService } from '../../../services/global.service';
 import {Router} from '@angular/router';
 import {LanguageService} from "../../../../../../../src/app/services/language.service";
 import {Location} from "@angular/common";
+import {StatusInternetService} from "../../../../../../../src/app/services/status-internet.service";
 
 @Component({
   selector: 'app-artists',
@@ -25,7 +26,8 @@ export class ArtistsComponent implements OnInit {
               private globalService: GlobalService,
               private router: Router,
               private languageService: LanguageService,
-              private location: Location) {
+              private location: Location,
+              private statusInternet: StatusInternetService) {
     this.theme = themeService.theme;
   }
 
@@ -62,11 +64,17 @@ export class ArtistsComponent implements OnInit {
    * When clicked on the album, send the user on the a web page that contains all music in this album
    */
   public seeAlbum(album: any): void {
+    this.checkConnexion();
     this.globalService.albumChoose = album;
     this.router.navigate([this.languageService.activeLanguage + '/deezer/albums', album.id]);
   }
 
   goBack(){
+    this.checkConnexion();
     this.location.back();
+  }
+
+  checkConnexion(){
+    this.statusInternet.checkStatusInternet();
   }
 }
