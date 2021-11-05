@@ -25,7 +25,7 @@ export class DefaultService {
 
   setToDefault(){
     this.dwellTimeService.dwellTime = false;
-    this.dwellTimeService.dwellTimeValue = 1000;
+    this.dwellTimeService.dwellTimeValue = 2000;
     this.dwellTimeService.dwellTimeSpinnerOutsideBtn = true;
     this.dwellTimeService.diskProgress = true;
     this.alertService.doNotShowAgain = false;
