@@ -9,7 +9,7 @@ toc_sticky: true
 
 ## Page de la playlist
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pagePlaylist.png" alt="La page de la playlist" caption="Page de connexion de GazeMedia Player quand celle-ci est vide." %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pagePlaylist.png" alt="La page de la playlist" caption="Page de connexion de InterAACtionPlayer quand celle-ci est vide." %}
 
 ### Barre de menu horizontal
 
