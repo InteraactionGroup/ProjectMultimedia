@@ -15,6 +15,9 @@ gazeplay.log.*
 .DS_Store
 
 .gradle/
+coverage
+dist
+node_modules
 build
 out
 
