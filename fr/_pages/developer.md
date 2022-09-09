@@ -1,6 +1,6 @@
 ---
 title: Developpeur
-permalink: /developpeur/
+permalink: /developpeur/fr
 layout: single
 toc: true
 ---
@@ -9,6 +9,6 @@ toc: true
 <img src="../assets/images/logo-github.png" alt="Logo GitHub"><br>
 <a href="https://github.com/InteraactionGroup/InterAACtionPlayer">Notre GitHub</a>
 
-### Api utilisées
+### API utilisées
 <img src="../assets/images/rfile-text.png" alt="Logo fichier"><br>
 <a href="https://github.com/InteraactionGroup/InterAACtionPlayer/blob/master/README-FR.md">Notre readme.md</a>

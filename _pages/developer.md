@@ -5,10 +5,10 @@ layout: single
 toc: true
 ---
 
-### Code source
+### Source code
 <img src="../assets/images/logo-github.png" alt="GitHub Logo "><br>
 <a href="https://github.com/InteraactionGroup/InterAACtionPlayer">OurGitHub</a>
 
-### Api utilisées
+### APIs used
 <img src="../assets/images/file-text.png" alt="File logo"><br>
 <a href="https://github.com/InteraactionGroup/InterAACtionPlayer/blob/master/README-FR.md">Our readme.md</a>

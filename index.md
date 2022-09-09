@@ -20,8 +20,8 @@ excerpt: >
 InterAACtionPlayer is a free and open source website. <br>
 It brings together 3 major music/video platforms:
 
-1.YouTube
+1. YouTube
 2. Deezer
-   3.Spotify
+3. Spotify
 
 In addition, it can be displayed in French or English.
