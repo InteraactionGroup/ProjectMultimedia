@@ -1,6 +1,6 @@
 ---
 title: Developpeur
-permalink: /developpeur/fr
+permalink: /developer/fr
 layout: single
 toc: true
 ---

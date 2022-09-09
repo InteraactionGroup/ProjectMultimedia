@@ -237,52 +237,6 @@ De plus une notification apparaît pour nous signaler que les paramètres ont ch
 
 {% include figure image_path="/assets/imagesUserGuide/fr/fenetreParametresNotification.png" alt="La Notification des paramètres" %}
 
-##### Choisir la langue
-
-##### Activer/Désactiver le dwelltime
-
-##### Choisir la durée du dwelltime
-
-##### Choisir la forme du dwelltime
-
-##### Activer/Désactiver message d'alerte
-
-#### Bouton 'Comptes'
-
-{% include figure image_path="/assets/imagesUserGuide/menuBarPlaylistBtnAccount.png" alt="Le bouton comptes" %}
-
-##### Compte Spotify
-
-##### Compte Deezer
-
-#### Bouton 'Déconnexion'
-
-{% include figure image_path="/assets/imagesUserGuide/menuBarPlaylistBtnLogout.png" alt="Le bouton déconnexion" %}
-
-### Barre de menu vertical
-
-#### Bouton 'Retourner à la playlist'
-
-#### Bouton 'Monter'
-
-#### Bouton 'Descendre'
-
-#### Bouton 'Aller à la musique/vidéo en cours'
-
-### La playlist
-
-#### Ordonner sa playlist
-
-#### Ajouter une vidéo/musique
-
-#### Lancer une vidéo/musique
-
-#### Les boutons d'une vidéo/musique
-
-#### Le mode plein écran
-
-#### Le visualizer
-
 ## YouTube
 
 ### Rechercher une vidéo
