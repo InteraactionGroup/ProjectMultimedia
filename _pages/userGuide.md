@@ -223,240 +223,240 @@ A window will open showing us all the modifiable options:
 
 {% include figure image_path="/assets/imagesUserGuide/fr/fenetreParametres.png" alt="The parameters window" %}
 
-##### Choisir le thème
+##### Choose theme
 
-Dans la fenêtre des paramètres, on peut choisir quelle thème on veut :
+In the settings window, you can choose which theme you want:
 
-* Clair
-* Sombre
+* Light
+* Dark
 
-{% include figure image_path="/assets/imagesUserGuide/fr/fenetreParametresTheme.png" alt="Le thème dans la fenêtre des paramètres" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/fenetreParametresTheme.png" alt="The theme in the settings window" %}
 
-Une fois le thème choisie (celui en vert), on clique sur sauvegarder et le thème du site change en thème "clair". <br>
-De plus une notification apparaît pour nous signaler que les paramètres ont changés.
+Once the theme has been chosen (the one in green), click on save and the theme of the site changes to a "clear" theme. <br>
+In addition, a notification appears to let us know that the settings have changed.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/fenetreParametresNotification.png" alt="La Notification des paramètres" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/fenetreParametresNotification.png" alt="The Notification settings" %}
 
 ## YouTube
 
-### Rechercher une vidéo
+### Search video
 
-Pour rechercher un vidéo YouTube, il suffit d'écrire ce que l'on cherche dans la barre de recherche.
+To search for a YouTube video, just write what you are looking for in the search bar.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/barreRechercheYoutube.png" alt="Barre de recherche Youtube" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/barreRechercheYoutube.png" alt="Youtube Searchbar" %}
 
-Dans l'exemple ci-dessous, je recherche des vidéos Youtube de "Pokora".
+In the example below, I'm looking for Youtube videos of "Pokora".
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleBarreRechercheYoutube.png" alt="Exemple barre de recherche Youtube remplie" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleBarreRechercheYoutube.png" alt="Example filled Youtube searchbar" %}
 
-Après quelques secondes, voici ce que j'obtient :
+After a few seconds, this is what I get:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleRechercheYoutube.png" alt="Exemple résultat de recherche Youtube" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleRechercheYoutube.png" alt="Example Youtube search result" %}
 
-Cette liste de vidéos lié à notre recherche peut afficher jusqu'à 50 vidéos par recherche.
+This list of videos related to our search can display up to 50 videos per search.
 
-### Ajouter une vidéo à la playlist
+### Add video to playlist
 
-Pour ajouter une vidéo YouTube dans notre playlist, il suffit de cliquer sur le bandeau vert "Ajouter à la Playlist".
+To add a YouTube video to our playlist, just click on the green "Add to Playlist" banner.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonAjouterVideoYoutube.png" alt="Bouton pour ajouter la vidéo YouTube à notre playlist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonAjouterVideoYoutube.png" alt="Button to add the YouTube video to our playlist" %}
 
-Une fois que l'on a cliquer sur le bouton, celui-ci devient rouge et une notification apparaît nous indiquant que la vidéo a bien été ajouter à notre playlist.
+Once we click on the button, it turns red and a notification appears telling us that the video has been added to our playlist.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationVideoAjouter.png" alt="Notification d'ajout d'une vidéo YouTube" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationVideoAjouter.png" alt="Notification of adding a YouTube video" %}
 
-### Supprimer une vidéo de la playlist
+### Delete a video from the playlist
 
-Pour supprimer une vidéo YouTube de notre playlist, il suffit de cliquer sur le bandeau rouge "Supprimer de la Playlist".
+To remove a YouTube video from our playlist, simply click on the red "Remove from Playlist" banner.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonSupprimerVideoYoutube.png" alt="Bouton pour supprimer la vidéo YouTube de notre playlist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonSupprimerVideoYoutube.png" alt="Button to delete YouTube video from our playlist" %}
 
-Une fois que l'on a cliquer sur le bouton, celui-ci devient vert et une notification apparaît nous indiquant que la vidéo a bien été supprimer de notre playlist.
+Once we click on the button, it turns green and a notification appears telling us that the video has been deleted from our playlist.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationVideoSupprimer.png" alt="Notification de suppression d'une vidéo YouTube" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationVideoSupprimer.png" alt="YouTube Video Deletion Notification" %}
 
 ## Spotify
 
-### Page d'accueil
+### Home page
 
-Lorsque l'on arrive sur la page Spotify, on obtient sa :
+When we arrive on the Spotify page, we get this :
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageAccueilSpotify.png" alt="Page d'accueil de Spotify" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageAccueilSpotify.png" alt="Spotify Homepage" %}
 
-Cette page contient :
+This page contains:
 
-* Une liste des dernières musiques sorties sur Spotify
-* Un menu vertical en haut à gauche permettant :
-    * De retourner à l'accueil
-    * D'accèder a la barre de recherche de musique sur Spotify
-    * De retourner à la playlist
+* A list of the latest music released on Spotify
+* A vertical menu at the top left allowing:
+  * To return to the reception
+  * Access the music search bar on Spotify
+  * To return to the playlist
 
-Le menu vertical suis l'utilisateur et sera disponible sur n'importe quelle page Spotify.
+The vertical menu follows the user and will be available on any Spotify page.
 
-### Rechercher un artist
+### Find an artist
 
-Pour faire une recherche d'artist sur Spotify, il faut pour commencer cliquer sur le bouton "Recherche" dans le menu vertical en haut à gauche.
+To search for an artist on Spotify, you must first click on the "Search" button in the vertical menu at the top left.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonRechercheSpotify.png" alt="Bouton Recherche" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonRechercheSpotify.png" alt="Search Button" %}
 
-Ensuite on arrive sur la page de recherche Spotify qui ressemble à sa :
+Then we arrive on the Spotify search page which looks like this:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageRechercheSpotify.png" alt="Bouton Recherche" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageRechercheSpotify.png" alt="Search Button" %}
 
-Pour avoir son artist, il faut juste l'écrire dans la barre de recherche. <br>
-Dans l'exemple ci-dessous, je cherche l'artist "Pokora".
+To have his artist, you just have to write it in the search bar. <br>
+In the example below, I am looking for the artist "Pokora".
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleRechercheArtistSpotify.png" alt="Exemple d'une recherche d'un artist sur Spotify" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleRechercheArtistSpotify.png" alt="Example of an artist search on Spotify" %}
 
-Voila ce que j'obtient :
+Here is what I get:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleListArtistSpotify.png" alt="Exemple d'une recherche d'un artist sur Spotify" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleListArtistSpotify.png" alt="Example of an artist search on Spotify" %}
 
-### Liste des albums d'un artist
+### List of an artist's albums
 
-Pour avoir la liste des albums d'un artist, il faut cliquer sur l'artist que l'on a recherché.<br>
-Dans l'exemple ci-dessous, je veux les albums de "Pokora" donc je clique sur l'artist "Pokora.
+To get the list of an artist's albums, click on the artist you are looking for.<br>
+In the example below, I want the albums of "Pokora" so I click on the artist "Pokora.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickArtistSpotify.png" alt="Exemple d'un click sur un artist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickArtistSpotify.png" alt="Example of a click on an artist" %}
 
-Après avoir cliquer sur l'artist, on arrive sur cette page :
+After clicking on the artist, we arrive on this page:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageArtistSpotify.png" alt="Exemple d'une liste d'album d'un artist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageArtistSpotify.png" alt="Example of an artist's album list" %}
 
-Cette page contient :
+This page contains:
 
-* L'image de l'artist
-* Son nom
-* Son nombre d'abonnés
-* Un bouton permettant de retourner sur la page de recherche
-* La liste de ces albums disponible sur Spotify
+* The artist's image
+* Her name
+* His number of subscribers
+* A button to return to the search page
+* The list of these albums available on Spotify
 
-### Liste des musiques d'un album
+### List of songs from an album
 
-Pour avoir les musiques d'un album, il faut cliquer sur l'album dont on veut les musique.<br>
-Dans l'exemple ci-dessous, je veux les musiques de l'album "Pyramide" de "Pokora" donc je clique sur l'album.
+To have the music of an album, you have to click on the album whose music you want.<br>
+In the example below, I want the music from the "Pyramide" album by "Pokora" so I click on the album.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickAlbumSpotify.png" alt="Exemple d'un click sur un album" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickAlbumSpotify.png" alt="Example of a click on an album" %}
 
-Après avoir cliquer sur l'artist, on arrive sur cette page :
+After clicking on the artist, we arrive on this page:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageListMusiqueSpotify.png" alt="Page de la liste des musiques d'un album" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageListMusiqueSpotify.png" alt="Album music list page" %}
 
-Cette page contient :
+This page contains:
 
-* L'image de l'album
-* Son nom
-* Un bouton permettant de retourner sur la page de l'artist de cette album
-* Un bouton permettant d'ajouter toutes les musiques de l'album à la playlist
-* Un bouton permettant de supprimer toutes les musiques de l'album de la playlist
-* Un lecteur audio pour chaques musiques
-* Un bouton a côté de chaques musiques permettant d'ajouter ou supprimer la musique de la playlist
+* Album image
+* Her name
+* A button to return to the artist page of this album
+* A button to add all the music from the album to the playlist
+* A button to remove all music in the album from the playlist
+* An audio player for each music
+* A button next to each music to add or remove music from the playlist
 
-### Ajouter une musique à la playlist
+### Add music to playlist
 
-Pour ajouter une musique Spotify dans notre playlist, il suffit de cliquer sur le bandeau vert "Ajouter à la Playlist".
+To add Spotify music to our playlist, just click on the green "Add to Playlist" banner.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonAjouterMusiqueSpotify.png" alt="Bouton pour ajouter la musique Spotify à notre playlist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonAjouterMusiqueSpotify.png" alt="Button to add Spotify music to our playlist" %}
 
-Une fois que l'on a cliquer sur le bouton, celui-ci devient rouge et une notification apparaît nous indiquant que la musique a bien été ajouter à notre playlist.
+Once we click on the button, it turns red and a notification appears telling us that the music has been added to our playlist.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueAjouter.png" alt="Notification d'ajout d'une musique" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueAjouter.png" alt="Notification of adding music" %}
 
-### Supprimer la musique de la playlist
+### Delete music from playlist
 
-Pour supprimer une musique Spotify de notre playlist, il suffit de cliquer sur le bandeau rouge "Supprimer de la Playlist".
+To delete Spotify music from our playlist, simply click on the red banner "Delete from Playlist".
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonSupprimerMusiqueSpotify.png" alt="Bouton pour supprimer la musique Spotify de notre playlist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonSupprimerMusiqueSpotify.png" alt="Button to remove Spotify music from our playlist" %}
 
-Une fois que l'on a cliquer sur le bouton, celui-ci devient vert et une notification apparaît nous indiquant que la musique a bien été supprimer de notre playlist.
+Once we click on the button, it turns green and a notification appears telling us that the music has been deleted from our playlist.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueSupprimer.png" alt="Notification de suppression de la musique" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueSupprimer.png" alt="Notification of deletion of music" %}
 
 ## Deezer
 
-### Page d'accueil
+### Home page
 
-Lorsque l'on arrive sur la page Deezer, on obtient sa :
+When we arrive on the Deezer page, we get this:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageAccueilDeezer.png" alt="Page d'accueil de Deezer" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageAccueilDeezer.png" alt="Deezer home page" %}
 
-Cette page contient :
+This page contains:
 
-* Une barre de recherche
-* Un menu vertical en haut à gauche permettant :
-    * De retourner à l'accueil
-    * De retourner à la playlist
+* A search bar
+* A vertical menu at the top left allowing:
+  * To return to the reception
+  * To return to the playlist
 
-Le menu vertical suis l'utilisateur et sera disponible sur n'importe quelle page Spotify.
+The vertical menu follows the user and will be available on any Spotify page.
 
-### Rechercher un artist
+### Find an artist
 
-Pour avoir son artist, il faut juste l'écrire dans la barre de recherche. <br>
-Dans l'exemple ci-dessous, je cherche l'artist "Pokora".
+To have his artist, you just have to write it in the search bar. <br>
+In the example below, I am looking for the artist "Pokora".
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleRechercheArtistDeezer.png" alt="Exemple d'une recherche d'un artist sur Deezer" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleRechercheArtistDeezer.png" alt="Example of a search for an artist on Deezer" %}
 
-Voila ce que j'obtient :
+Here is what I get:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleListArtistDeezer.png" alt="Exemple d'une recherche d'un artist sur Deezer" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleListArtistDeezer.png" alt="Example of an artist search on Deezer" %}
 
-### Liste des albums d'un artist
+### List of an artist's albums
 
-Pour avoir la liste des albums d'un artist, il faut cliquer sur l'artist que l'on a recherché.<br>
-Dans l'exemple ci-dessous, je veux les albums de "Pokora" donc je clique sur l'artist "Pokora.
+To get the list of an artist's albums, click on the artist you are looking for.<br>
+In the example below, I want the albums of "Pokora" so I click on the artist "Pokora.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickArtistDeezer.png" alt="Exemple d'un click sur un artist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickArtistDeezer.png" alt="Example of a click on an artist" %}
 
-Après avoir cliquer sur l'artist, on arrive sur cette page :
+After clicking on the artist, we arrive on this page:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageArtistDeezer.png" alt="Exemple d'une liste d'album d'un artist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageArtistDeezer.png" alt="Example of an artist's album list" %}
 
-Cette page contient :
+This page contains:
 
-* L'image de l'artist
-* Son nom
-* Son nombre d'abonnés
-* Un bouton permettant de retourner sur la page de recherche
-* La liste de ces albums disponible sur Deezer
+* The artist's image
+* Her name
+* His number of subscribers
+* A button to return to the search page
+* The list of these albums available on Deezer
 
-### Liste des musiques d'un album
+### List of songs from an album
 
-Pour avoir les musiques d'un album, il faut cliquer sur l'album dont on veut les musique.<br>
-Dans l'exemple ci-dessous, je veux les musiques de l'album "Pyramide" de "Pokora" donc je clique sur l'album.
+To have the music of an album, you have to click on the album whose music you want.<br>
+In the example below, I want the music from the "Pyramide" album by "Pokora" so I click on the album.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickAlbumDeezer.png" alt="Exemple d'un click sur un album" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleClickAlbumDeezer.png" alt="Example of a click on an album" %}
 
-Après avoir cliquer sur l'artist, on arrive sur cette page :
+After clicking on the artist, we arrive on this page:
 
-{% include figure image_path="/assets/imagesUserGuide/fr/pageListMusiquesDeezer.png" alt="Page de la liste des musiques d'un album" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/pageListMusiquesDeezer.png" alt="Page of the list of songs of an album" %}
 
-Cette page contient :
+This page contains:
 
-* L'image de l'album
-* Son nom
-* Un bouton permettant de retourner sur la page de l'artist de cette album
-* Un bouton permettant d'ajouter toutes les musiques de l'album à la playlist
-* Un bouton permettant de supprimer toutes les musiques de l'album de la playlist
-* Un lecteur audio pour chaques musiques
-* Un bouton a côté de chaques musiques permettant d'ajouter ou supprimer la musique de la playlist
+* Album image
+* Her name
+* A button to return to the artist page of this album
+* A button to add all the music from the album to the playlist
+* A button to remove all music in the album from the playlist
+* An audio player for each music
+* A button next to each music to add or remove music from the playlist
 
-### Ajouter une musique à la playlist
+### Add music to playlist
 
-Pour ajouter une musique Deezer dans notre playlist, il suffit de cliquer sur le bandeau vert "Ajouter à la Playlist".
+To add Deezer music to our playlist, simply click on the green "Add to Playlist" banner.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonAjouterMusiqueDeezer.png" alt="Bouton pour ajouter la musique Deezer à notre playlist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonAjouterMusiqueDeezer.png" alt="Button to add Deezer music to our playlist" %}
 
-Une fois que l'on a cliquer sur le bouton, celui-ci devient rouge et une notification apparaît nous indiquant que la musique a bien été ajouter à notre playlist.
+Once we click on the button, it turns red and a notification appears telling us that the music has been added to our playlist.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueAjouter.png" alt="Notification d'ajout d'une musique" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueAjouter.png" alt="Notification of adding music" %}
 
-### Supprimer la musique de la playlist
+### Delete music from playlist
 
-Pour supprimer une musique Deezer de notre playlist, il suffit de cliquer sur le bandeau rouge "Supprimer de la Playlist".
+To remove Deezer music from our playlist, simply click on the red "Remove from Playlist" banner.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/boutonSupprimerMusiqueDeezer.png" alt="Bouton pour supprimer la musique Spotify de notre playlist" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/boutonSupprimerMusiqueDeezer.png" alt="Button to remove Spotify music from our playlist" %}
 
-Une fois que l'on a cliquer sur le bouton, celui-ci devient vert et une notification apparaît nous indiquant que la musique a bien été supprimer de notre playlist.
+Once we click on the button, it turns green and a notification appears telling us that the music has been deleted from our playlist.
 
-{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueSupprimer.png" alt="Notification de suppression de la musique" %}
+{% include figure image_path="/assets/imagesUserGuide/fr/exempleNotificationMusiqueSupprimer.png" alt="Notification of deletion of music" %}
 
