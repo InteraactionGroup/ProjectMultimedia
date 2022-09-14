@@ -20,3 +20,7 @@ toc: true
 ### API used
 <img src="../assets/images/logo-api.png" alt="API logo"><br>
 <a href="https://github.com/InteraactionGroup/InterAACtionPlayer/blob/master/API-EN.md">Our APIs</a>
+
+### Website
+<img src="../assets/images/logo-website.png" alt="Website logo"><br>
+<a href="https://github.com/InteraactionGroup/InterAACtionPlayer/blob/master/WEBSITE.md">Our website</a>
