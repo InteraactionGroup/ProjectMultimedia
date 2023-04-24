@@ -54,6 +54,11 @@ export class AlertService {
     this.alertContent = "alert.contentNewPlaylist";
   }
 
+  setResetSettings(){
+    this.alertTitle = "alert.titleResetSettings";
+    this.alertContent = "alert.contentResetSettings";
+  }
+
   /**
    * Allows to get the actual alertTitle
    */

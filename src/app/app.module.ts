@@ -89,6 +89,7 @@ import {LogoutAppComponent} from "./playlist/dialogComponents/logoutApp/logout-a
 import { SettingsComponent } from './playlist/dialogComponents/settings/settings.component';
 import {SpeedTestModule} from "ng-speed-test";
 import {SettingsPageComponent} from "./playlist/settingsPage/settings-page.component";
+import { ResetComponent } from './settingsPage-asfr/reset/reset.component';
 import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
@@ -122,7 +123,8 @@ import { MatMenuModule } from '@angular/material/menu';
     LoadingPageComponent,
     LogoutAppComponent,
     SettingsComponent,
-    SettingsPageComponent
+    SettingsPageComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

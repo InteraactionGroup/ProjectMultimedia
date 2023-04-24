@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AuthguardService } from "../services/authguard.service";
 import { DwelltimeService } from "../services/dwelltime.service";
 import { MatDialog } from "@angular/material/dialog";
@@ -8,8 +8,8 @@ import { LanguageService } from "../services/language.service";
 import { SaveService } from "../services/save.service";
 import { TranslateService } from "@ngx-translate/core";
 import { AlertService } from '../playlist/services/alert.service';
+import { ResetComponent } from './reset/reset.component';
 import { MatMenuModule } from '@angular/material/menu';
-
 
 @Component({
   selector: 'app-settings-page',
@@ -42,6 +42,7 @@ export class SettingsPageComponentAsfr implements OnInit {
   btnSpinnerInside;
   btnAlertMessageYes;
   btnAlertMessageNo;
+  btnReset;
 
   matMenu;
   currentSize;
@@ -52,14 +53,15 @@ export class SettingsPageComponentAsfr implements OnInit {
   colorText = "";
 
   constructor(public authGuardService: AuthguardService,
-              private dwellTimeService: DwelltimeService,
-              private dialog: MatDialog,
-              private notifier: NotifierService,
-              private themeService: ThemeService,
-              private language: LanguageService,
-              private saveService: SaveService,
-              private translate: TranslateService,
-              private alertService: AlertService) {
+    private dwellTimeService: DwelltimeService,
+    private dialog: MatDialog,
+    private notifier: NotifierService,
+    private themeService: ThemeService,
+    private language: LanguageService,
+    private saveService: SaveService,
+    private translate: TranslateService,
+    private alertService: AlertService,
+   ) {
   }
 
   ngOnInit(): void {
@@ -78,36 +80,50 @@ export class SettingsPageComponentAsfr implements OnInit {
   /**
    * Set the theme to light
    */
-  toggleThemeLight(){
+  toggleThemeLight() {
     this.themeValue = "";
     this.themeService.emitTheme(this.themeValue);
     this.colorText = "colorDark";
     this.saveService.updateSettings();
+
+    this.btnThemeLight = true;
+    this.btnThemeDark = false;
   }
 
   /**
    * Set the theme to dark
    */
-  toggleThemeDark(){
+  toggleThemeDark() {
     this.themeValue = "inverted";
     this.themeService.emitTheme(this.themeValue);
     this.colorText = "colorLight";
     this.saveService.updateSettings();
+
+    this.btnThemeLight = false;
+    this.btnThemeDark = true;
   }
 
   /**
    * Enable or not the DwellTime function according to the choice of the user
    */
-  dwellTime(value: boolean){
+  dwellTime(value: boolean) {
     this.dwellTimeEnable = value;
     this.dwellTimeService.dwellTime = this.dwellTimeEnable;
     this.saveService.updateSettings();
+
+    if (value){
+      this.btnDwellTimeYes = true; 
+      this.btnDwellTimeNo = false;
+    } else {
+      this.btnDwellTimeYes = false; 
+      this.btnDwellTimeNo = true;
+    }
   }
 
   /**
    * Enable the spinner inside the button or outside
    */
-  dwellTimeShape(value: boolean){
+  dwellTimeShape(value: boolean) {
     this.dwellTimeSpinnerOutsideBtn = value;
     this.dwellTimeService.dwellTimeSpinnerOutsideBtn = value;
     this.saveService.updateSettings();
@@ -118,10 +134,33 @@ export class SettingsPageComponentAsfr implements OnInit {
    *
    * Set the mode use for DwellTime = Disk if true else circle if false
    */
-  diskProgressMode(value: boolean){
+  diskProgressMode(value: boolean) {
     this.diskProgress = value;
     this.dwellTimeService.diskProgress = value;
     this.saveService.updateSettings();
+  }
+
+  /**
+   * Open a modal asking for confirmation
+   * If confirmed, reset all settings for the current user and update the database
+   */
+  openReset(): void {
+    const alertDialog = this.dialog.open(ResetComponent);
+    alertDialog.afterClosed().subscribe(() => {
+      if (!this.alertService.alertCancel) {
+        this.dwellTime(false);
+        this.dwellTimeService.dwellTimeValue = 5000;
+        this.diskProgressMode(true);
+        this.displayAlertMessage(false);
+        this.dwellTimeShape(true);
+        this.toggleThemeLight();
+      
+        this.saveService.updateSettings(); 
+
+        this.notifier.notify('warning', this.translate.instant('notifier.resetSettings'));
+      }
+    });
+   
   }
 
   /**
@@ -129,9 +168,9 @@ export class SettingsPageComponentAsfr implements OnInit {
    *
    * Get the value set by the user and convert the value (in seconds) to milliseconds
    */
-  getValue(event){
+  getValue(event) {
     let value = event.target.value * 1000.0;
-    if (this.isValid(value)){
+    if (this.isValid(value)) {
       this.dwellTimeService.dwellTimeValue = value;
       this.saveService.updateSettings();
     }
@@ -141,11 +180,11 @@ export class SettingsPageComponentAsfr implements OnInit {
    * Check if the value entered by the user is >= 1000.0
    * Else return an error
    */
-  isValid(value){
-    if (value >= 1000.0){
+  isValid(value) {
+    if (value >= 1000.0) {
       this.error = false;
       return true
-    }else {
+    } else {
       this.error = true;
       return false;
     }
@@ -154,9 +193,18 @@ export class SettingsPageComponentAsfr implements OnInit {
   /**
    * Enable or disable to display an alert message
    */
-  displayAlertMessage(value){
+  displayAlertMessage(value) {
     this.disableAlertMessage = value;
     this.alertService.doNotShowAgain = value;
+
+    if (value){
+      this.btnAlertMessageYes = true;
+        this.btnAlertMessageNo = false;
+    } else {
+      this.btnAlertMessageYes = false;
+        this.btnAlertMessageNo = true;
+    }
+
     this.saveService.updateSettings();
   }
 
@@ -170,13 +218,14 @@ export class SettingsPageComponentAsfr implements OnInit {
   /**
    * Set the label DwellTime to enable or disable
    */
-  isDwellTimeEnable(){
+  isDwellTimeEnable() {
+    this.dwellTimeEnable = this.dwellTimeService.dwellTime;
     setTimeout(() => {
-      if (this.dwellTimeService.dwellTime){
+      if (this.dwellTimeService.dwellTime) {
         this.btnDwellTimeYes = "checked";
         this.btnDwellTimeNo = "";
-      }else {
-        this.btnDwellTimeYes = "" ;
+      } else {
+        this.btnDwellTimeYes = "";
         this.btnDwellTimeNo = "checked";
       }
     }, 250);
@@ -184,13 +233,14 @@ export class SettingsPageComponentAsfr implements OnInit {
 
   isThemeLightEnable() {
     setTimeout(() => {
-      if (this.themeService.getTypeTheme()){
-        this.btnThemeLight = "checked";
-        this.btnThemeDark = "";
+      if (this.themeService.getTypeTheme()) {
+        
+        this.btnThemeLight = true
+        this.btnThemeDark = false;
         this.colorText = "colorDark";
-      }else {
-        this.btnThemeLight = "" ;
-        this.btnThemeDark = "checked";
+      } else {
+        this.btnThemeLight = false
+        this.btnThemeDark = true;
         this.colorText = "colorLight";
       }
     }, 250);
@@ -198,42 +248,42 @@ export class SettingsPageComponentAsfr implements OnInit {
 
   isAlertMessageEnable() {
     setTimeout(() => {
-      if (this.alertService.doNotShowAgain){
+      if (this.alertService.doNotShowAgain) {
         this.btnAlertMessageYes = "checked";
         this.btnAlertMessageNo = "";
-      }else {
-        this.btnAlertMessageYes = "" ;
+      } else {
+        this.btnAlertMessageYes = "";
         this.btnAlertMessageNo = "checked";
       }
     }, 250);
   }
 
-  getDwellTimeValue(){
+  getDwellTimeValue() {
     setTimeout(() => {
       this.dwellTimeValue = this.dwellTimeService.dwellTimeValue;
     }, 250);
   }
 
-  isDiskProgressEnable(){
+  isDiskProgressEnable() {
     setTimeout(() => {
       this.diskProgress = this.dwellTimeService.diskProgress;
-      if (this.diskProgress){
+      if (this.diskProgress) {
         this.btnDiskProgress = "checked";
         this.btnCircleProgress = "";
-      }else {
-        this.btnDiskProgress = "" ;
+      } else {
+        this.btnDiskProgress = "";
         this.btnCircleProgress = "checked";
       }
     }, 250);
   }
 
-  isSpinnerOutsideEnable(){
+  isSpinnerOutsideEnable() {
     setTimeout(() => {
-      if (this.dwellTimeService.dwellTimeSpinnerOutsideBtn){
+      if (this.dwellTimeService.dwellTimeSpinnerOutsideBtn) {
         this.btnSpinnerOutside = "checked";
         this.btnSpinnerInside = "";
-      }else {
-        this.btnSpinnerOutside = "" ;
+      } else {
+        this.btnSpinnerOutside = "";
         this.btnSpinnerInside = "checked";
       }
     }, 250);
