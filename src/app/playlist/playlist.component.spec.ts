@@ -31,6 +31,14 @@ class MockThemeService {
     }
     return of('');
   }
+
+  get themeSizeObservable() {
+    if (count == 1){
+      count++;
+      return of(100);
+    }
+    return of(200);
+  }
 }
 
 

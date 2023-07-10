@@ -7,10 +7,12 @@ import { Subject } from 'rxjs';
 export class ThemeService {
 
   public themeObservable = new Subject<string>();
+  public themeSizeObservable = new Subject<string>();
 
   /* theme = "" -> light theme / theme = "inverted" -> dark theme */
   public theme = "";
   public themeBody = "";
+  public themeSize = 100;
 
   constructor() {
   }
@@ -30,5 +32,19 @@ export class ThemeService {
    */
   getTypeTheme(){
     return this.theme == "";
+  }
+
+    /**
+   * @param val -> number between 1 and 2
+   *
+   * Notifies observers when value change then add value to themeSize variable
+   */
+  emitSize(val){
+    this.themeSizeObservable.next(val);
+    this.themeSize = val;
+  }
+
+  getThemeSize(){
+    return this.themeSize;
   }
 }

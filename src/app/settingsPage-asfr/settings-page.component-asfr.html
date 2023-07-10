@@ -30,7 +30,7 @@
         <label [class]="colorText">{{ 'settingsPlaylist.dwellTime' | translate }}</label>
         <div class="field">
           <div class="ui radio checkbox">
-            <input type="radio" name="dwellTime"  [checked]="btnDwellTimeYes" (click)="dwellTime(true)">
+            <input type="radio" name="dwellTime" [checked]="btnDwellTimeYes" (click)="dwellTime(true)">
             <label [class]="colorText">{{ "settingsPlaylist.enable" | translate }}</label>
           </div>
         </div>
@@ -43,6 +43,7 @@
       </div>
     </div>
     <br>
+    <div *ngIf="dwellTimeEnable">
     <div class="field">
       <label [class]="colorText">{{ 'settingsPlaylist.duration' | translate }}</label>
       <div id="inputDwellTime" class="ui right labeled input">
@@ -75,22 +76,23 @@
     </div>
     <div *ngIf="!diskProgress" class="ui form">
       <div class="inline fields">
-        <label [class]="colorText">Aucune idée bordel</label>
+        <label [class]="colorText">{{ 'settingsPlaylist.dwellsize' | translate}}</label>
         <div class="field">
           <div class="ui radio checkbox">
             <input type="radio" name="dwellTimeShape2" [checked]="btnSpinnerInside" (click)="dwellTimeShape(false)">
-            <label [class]="colorText">{{ 'settingsPlaylist.spinnerInside' | translate }}</label>
+            <label [class]="colorText">{{ 'settingsPlaylist.spinnerSmall' | translate }}</label>
           </div>
         </div>
         <div class="field">
           <div class="ui radio checkbox">
             <input type="radio" name="dwellTimeShape2" [checked]="btnSpinnerOutside" (click)="dwellTimeShape(true)">
-            <label [class]="colorText">{{ 'settingsPlaylist.spinnerOutside' | translate }}</label>
+            <label [class]="colorText">{{ 'settingsPlaylist.spinnerBig' | translate }}</label>
           </div>
         </div>
       </div>
     </div>
     <br>
+  </div>
     <div class="ui form">
       <div class="inline fields">
         <label [class]="colorText">{{ 'settingsPlaylist.alertMessage' | translate }}</label>
@@ -106,6 +108,25 @@
             <label [class]="colorText">{{ "settingsPlaylist.no" | translate }}</label>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="inline field">
+      <button id="resetIcon" class="ui button" (click)="openReset()">
+        <i class="trash alternate icon"></i>
+        {{ 'settingsPlaylist.reset' | translate}}
+      </button>
+    </div>
+    <div class="ui form">
+      <div class="inline fields">
+      <label [class]="colorText">{{ 'settingsPlaylist.iconSize' | translate }}</label>
+      <button id="menuButton" mat-button [matMenuTriggerFor]="menu"> {{ currentSize }} % </button>  
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="changeSize(100)">100%</button>
+        <button mat-menu-item (click)="changeSize(125)">125%</button>
+        <button mat-menu-item (click)="changeSize(150)">150%</button>
+        <button mat-menu-item (click)="changeSize(175)">175%</button>
+        <button mat-menu-item (click)="changeSize(200)">200%</button> 
+        </mat-menu>
       </div>
     </div>
   </div>

@@ -79,7 +79,7 @@ describe('ImportuserComponent', () => {
     beforeEach(() => {
       // @ts-ignore
       component.dialog = { closeAll: jasmine.createSpy(), open: () => ({ afterClosed: () => of(true) })} as any;
-      component.fileUser = [[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }]];
+      component.fileUser = [[{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }, { id: 6 }, { id: 7 }, { id: 8 }, { id: 9}]];
     });
     it('should throw error if file is empty', () => {
       // @ts-ignore

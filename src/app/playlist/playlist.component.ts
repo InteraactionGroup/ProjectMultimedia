@@ -112,6 +112,9 @@ export class PlaylistComponent implements OnInit {
   idProgressIndicatorIconLogout = "iconLogoutProgressSpinner";
   idProgressIndicatorIconNew = "iconNewProgressSpinner";
 
+  iconSize;
+  marginSize;
+
   refresh = false;
   loopProgressIndicator = false;
 
@@ -139,7 +142,7 @@ export class PlaylistComponent implements OnInit {
 
   /**
    * Initialize the playlist with the id of the current user
-   * Allows to know if the theme value has changed
+   * Allows to know if the theme value or the size has changed
    * Initialize DialogChooseTypeComponent
    * Allows time (500ms) to load the playlist from the database
    * Then check if the playlist is empty, if it's the case active the edit mode
@@ -154,6 +157,10 @@ export class PlaylistComponent implements OnInit {
         this.textColor = "lightMode";
       }
     });
+    this.themeService.themeSizeObservable.subscribe(value => {
+      this.setIconSize(Number(value));
+    });
+
     new DialogChooseTypeComponent(this.router, this.dialog, this.playlistService);
     setTimeout(() => {
       initDeezer();
@@ -451,6 +458,15 @@ export class PlaylistComponent implements OnInit {
       this.globalService.getLogoutAccountSpotify();
     }
     this.dialog.open(LogoutAppComponent);
+  }
+
+  /**
+   * Change the size of the icons
+   * @param value Between 100 and 200 give the best results
+   */
+  setIconSize(value: number){
+    this.iconSize =  value;
+    this.marginSize = this.iconSize/8;
   }
 
   /**

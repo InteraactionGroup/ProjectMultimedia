@@ -21,3 +21,9 @@ label ,a{
 #inputDwellTime{
   margin-left: 10px;
 }
+
+#menuButton {
+  background-color: white;
+  width: 5em;
+  height: 2em;
+}

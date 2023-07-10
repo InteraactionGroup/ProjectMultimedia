@@ -1,9 +1,5 @@
 <div id="dz-root"></div>
-<div id="statusLogin">
-  <i class="ui circular label noMargin" [class]="statusSpotify"></i>{{ textStatusSpotify | translate }}
-  <br>
-  <i class="ui circular label noMargin" [class]="statusDeezer"></i>{{ textStatusDeezer | translate }}
-</div>
+
 <br>
 <div *ngIf="displayTheSideBar && !fullScreen" [ngClass]="theme" class="ui four left vertical visible sidebar labeled icon menu">
   <a id="upSideIcon" class="item" (click)="goUp()"
@@ -40,9 +36,14 @@
          [ngStyle]="{ 'background-image': 'url(assets/Logo-AFSR.png)','filter' : 'brightness('+this.getBrightnessOfAFSRLogo()+')' }">
       </a>
     </div>
+    <div id="statusLogin centered grid">
+      <i class="ui circular label noMargin" [class]="statusSpotify"></i>{{ textStatusSpotify | translate }}
+      <br>
+      <i class="ui circular label noMargin" [class]="statusDeezer"></i>{{ textStatusDeezer | translate }}
+    </div>
     <div [ngClass]="theme" class="ui secondary menu">
       <div class="left menu">
-        <a id="newIcon" class="ui item" (click)="newPlaylist()"
+        <a id="newIcon" class="ui item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="newPlaylist()"
            (mouseenter)="showProgressIndicator('newIcon', idProgressIndicatorIconNew); showBtn('newIcon')"
            (mouseleave)="hideProgressIndicator('newIcon', idProgressIndicatorIconNew); hideBtn('newIcon')"
            matTooltip="{{'playlist.new' | translate}}"
@@ -50,7 +51,7 @@
           <i class="big file icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconNew" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="deleteIcon" class="item" (click)="openDelete()"
+        <a id="deleteIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openDelete()"
            (mouseenter)="showProgressIndicator('deleteIcon', idProgressIndicatorIconDelete); showBtn('deleteIcon')"
            (mouseleave)="hideProgressIndicator('deleteIcon', idProgressIndicatorIconDelete); hideBtn('deleteIcon')"
            matTooltip="{{'playlist.deleteBtn' | translate}}"
@@ -58,7 +59,7 @@
           <i class="big trash alternate icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconDelete" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="editIcon" class="item" (click)="goEdit()"
+        <a id="editIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="goEdit()"
            (mouseenter)="showProgressIndicator('editIcon', idProgressIndicatorIconEdit); showBtn('editIcon')"
            (mouseleave)="hideProgressIndicator('editIcon', idProgressIndicatorIconEdit); hideBtn('editIcon')"
            matTooltip="{{'playlist.editBtn' | translate}}"
@@ -68,7 +69,7 @@
         </a>
       </div>
       <div class="right menu">
-        <a id="saveIcon" class="item" (click)="openSave()"
+        <a id="saveIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openSave()"
            (mouseenter)="showProgressIndicator('saveIcon', idProgressIndicatorIconSave); showBtn('saveIcon')"
            (mouseleave)="hideProgressIndicator('saveIcon', idProgressIndicatorIconSave); hideBtn('saveIcon')"
            matTooltip="{{'playlist.saveBtn' | translate}}"
@@ -76,7 +77,7 @@
           <i class="big save icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconSave" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="loadIcon" class="item" (click)="openLoad()"
+        <a id="loadIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openLoad()"
            (mouseenter)="showProgressIndicator('loadIcon', idProgressIndicatorIconLoad); showBtn('loadIcon')"
            (mouseleave)="hideProgressIndicator('loadIcon', idProgressIndicatorIconLoad); hideBtn('loadIcon')"
            matTooltip="{{'playlist.loadBtn' | translate}}"
@@ -84,7 +85,7 @@
           <i class="big folder open icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconLoad" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="exportIcon" class="item" (click)="openExport()"
+        <a id="exportIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openExport()"
            (mouseenter)="showProgressIndicator('exportIcon', idProgressIndicatorIconExport); showBtn('exportIcon')"
            (mouseleave)="hideProgressIndicator('exportIcon', idProgressIndicatorIconExport); hideBtn('exportIcon')"
            matTooltip="{{'playlist.exportBtn' | translate}}"
@@ -92,7 +93,7 @@
           <i class="big upload icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconExport" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="importIcon" class="item" (click)="openImport()"
+        <a id="importIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openImport()"
            (mouseenter)="showProgressIndicator('importIcon', idProgressIndicatorIconImport); showBtn('importIcon')"
            (mouseleave)="hideProgressIndicator('importIcon', idProgressIndicatorIconImport); hideBtn('importIcon')"
            matTooltip="{{'playlist.importBtn' | translate}}"
@@ -100,7 +101,7 @@
           <i class="big download icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconImport" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="settingsIcon" class="item" (click)="openSettings()"
+        <a id="settingsIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openSettings()"
            (mouseenter)="showProgressIndicator('settingsIcon', idProgressIndicatorIconSettings); showBtn('settingsIcon')"
            (mouseleave)="hideProgressIndicator('settingsIcon', idProgressIndicatorIconSettings); hideBtn('settingsIcon')"
            matTooltip="{{'playlist.settingsBtn' | translate}}"
@@ -108,7 +109,7 @@
           <i class="big cog icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconSettings" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a id="userIcon" class="item" (click)="openAccounts()"
+        <a id="userIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="openAccounts()"
            (mouseenter)="showProgressIndicator('userIcon', idProgressIndicatorIconUser); showBtn('userIcon')"
            (mouseleave)="hideProgressIndicator('userIcon', idProgressIndicatorIconUser); hideBtn('userIcon')"
            matTooltip="{{'playlist.userBtn' | translate}}"
@@ -116,7 +117,7 @@
           <i class="big user icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconUser" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a *ngIf="!this.languageService.AFSR" id="logoutIcon" class="item" (click)="logout()"
+        <a *ngIf="!this.languageService.AFSR" id="logoutIcon" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="logout()"
            (mouseenter)="showProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); showBtn('logoutIcon')"
            (mouseleave)="hideProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); hideBtn('logoutIcon')"
            matTooltip="{{'playlist.logoutBtn' | translate}}"
@@ -124,7 +125,7 @@
           <i class="big open door icon"></i>
           <app-progress-indicator [id]="idProgressIndicatorIconLogout" [spinnerValue]="spinnerValue" [type]="iconType"></app-progress-indicator>
         </a>
-        <a *ngIf="this.languageService.AFSR" id="logoutIconAFSR" class="item" (click)="logoutAFSR()"
+        <a *ngIf="this.languageService.AFSR" id="logoutIconAFSR" class="item" [ngStyle]="{'transform': 'scale('+iconSize+'%)', 'margin-left': marginSize + 'px',  'margin-right': marginSize + 'px'}" (click)="logoutAFSR()"
            (mouseenter)="showProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); showBtn('logoutIcon')"
            (mouseleave)="hideProgressIndicator('logoutIcon', idProgressIndicatorIconLogout); hideBtn('logoutIcon')"
            matTooltip="{{'playlist.logoutBtn' | translate}}"
